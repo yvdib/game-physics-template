@@ -11,6 +11,12 @@
 class Scene
 {
 public:
+    glm::mat4 cameraMatrix = glm::mat4(1);
+    glm::vec3 fwd = glm::vec3(1, 0, 0);
+    glm::vec3 right = glm::vec3(0, 1, 0);
+    glm::vec3 up = glm::vec3(0, 0, 1);
+
+
     /// @brief Initialize the scene. Gets called every time the scene is switched to.
     virtual void init() {};
     /// @brief Simulate a step in the scene. Gets called every frame before onDraw.
