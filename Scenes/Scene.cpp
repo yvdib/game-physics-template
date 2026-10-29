@@ -21,12 +21,4 @@ void Scene::onDraw(Renderer &renderer)
     right = inverse(cameraMatrix) * glm::vec4(1, 0, 0, 0);
     up = inverse(cameraMatrix) * glm::vec4(0, 1, 0, 0);
 
-    if(ImGui::IsMouseReleased(ImGuiMouseButton_Right)){
-        auto drag = ImGui::GetMouseDragDelta(1);
-        if(drag.x == 0 && drag.y == 0)
-            continue;
-        auto dx = drag.x * right;
-        auto dy = -drag.y * up;
-        object.force += dx + dy;
-    }
 }

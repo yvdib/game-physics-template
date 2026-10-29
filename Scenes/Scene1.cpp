@@ -4,6 +4,7 @@
 #include "glm/gtx/quaternion.hpp"
 
 void Scene1::onDraw(Renderer& renderer){
+    //std::filesystem::path p = resolveFile("resources/image_shader.wgsl", {}, true); // don't understand how to add this correctly
     renderer.drawWireCube(glm::vec3(0), glm::vec3(5), glm::vec3(1));
 
     renderer.drawCube(  glm::vec3(0,0,0),
