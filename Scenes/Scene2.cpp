@@ -12,10 +12,23 @@ void Scene2::init()
     dt = 0.005f;
 }
 
+void Scene2::onDraw(Renderer& renderer)
+{
+    // Draw the two masses
+    renderer.drawSphere(x0, 0.1f, glm::vec4(1, 0, 0, 1));
+    renderer.drawSphere(x1, 0.1f, glm::vec4(0, 0, 1, 1));
+
+    // Draw the spring connecting the masses
+    renderer.drawLine(x0, x1, glm::vec3(1, 1, 1));
+
+    renderer.drawWireCube(glm::vec3(0), glm::vec3(5), glm::vec3(1));
+}
+
 void Scene2::simulateStep()
 {
     glm::vec3 d = x1 - x0;
     float l = glm::length(d);
+    std::cout << "Spring length: " << l << std::endl;
 
     if (l > 0) {
 
